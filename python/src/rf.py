@@ -3,18 +3,14 @@ import cv2
 import os
 import sys
 import datetime
-import xml.etree.ElementTree as ET
 
 '''
     此脚本未测试
-    说明：这个脚本用来将识别摄像头中出现的多个人脸，并将出现过的标签输出到xml中
+    说明：这个脚本用来将识别摄像头中出现的多个人脸
          使用这个脚本前先上传需要识别的人脸模型文件和csv文件，并先运行parseXML生成合并后的识别模型
-    用法：python rf.py <semester> <week> <class_course_id> <during_time>
-    参数：semester 课程学期
-         week 课程周数
-         class_course_id 课程ID
-         during_time 上课时长(分钟数)
-    输出：attend.xml
+    用法：python rf.py <during_time>
+    参数：during_time 上课时长(分钟数)
+    输出：
     存储结构：
     ~/src/
     .
@@ -23,26 +19,6 @@ import xml.etree.ElementTree as ET
     ~/model_path/
     .
     |-- model.xml
-
-    ~/result/
-    .
-    |-- attend.xml
-    |-- template.xml
-
-    xml文件结构：
-    <data>
-        <semester> </semester>
-        <week> </week>
-        <class_course_id> </class_course_id>
-        <attends>
-            <label> </label>
-            <label> </label>
-            <label> </label>
-            ...
-            <label> </label>
-        <attends>
-    </data>
-
 '''
 
 
@@ -84,52 +60,16 @@ def face_rec(during_time):
     return attends
 
 
-def make_xml(semester, week, class_course_id, attends):
-    # 结果XML模版路径
-    template_xml_path = 'F:/python/result/template.xml'
-    # 结果输出路径
-    result_path = 'F:/python/result/'
-
-    template = ET.parse(template_xml_path)
-    template_root = template.getroot()
-    template_semester = template_root.find('semester')
-    template_week = template_root.find('week')
-    template_class_course_id = template_root.find('class_course_id')
-    template_attends = template_root.find('attends')
-
-    template_semester.text = semester
-    template_week.text = week
-    template_class_course_id.text = class_course_id
-
-    for label in attends:
-        attend = ET.Element("label")
-        attend.text = label
-        template_attends.append(attend)
-
-    template.write(result_path + '/result.xml')
-
-
 if __name__ == '__main__':
-    if len(sys.argv) != 5:
-        print("usage: python rf.py <semester> <week> <class_course_id> <during_time>")
+    if len(sys.argv) != 2:
+        print("usage: python rf.py <during_time>")
         sys.exit(1)
-    SEMESTER = sys.argv[1]
-    WEEK = sys.argv[2]
-    CLASS_COURSE_ID = sys.argv[3]
-    DURING_TIME = sys.argv[4]
+    DURING_TIME = sys.argv[1]
 
-    if not isinstance(SEMESTER, int):
-        print("semester must be INT")
-        sys.exit(1)
-    if not isinstance(WEEK, int):
-        print("week must be INT")
-        sys.exit(1)
-    if not isinstance(CLASS_COURSE_ID, int):
-        print("class_course_id must be INT")
-        sys.exit(1)
     if not isinstance(DURING_TIME, int):
         print("during_time must be INT")
         sys.exit(1)
 
     attends = face_rec(DURING_TIME)
-    make_xml(SEMESTER, WEEK, CLASS_COURSE_ID, attends)
+    for attend in attends:
+        print(attend, end=',')
