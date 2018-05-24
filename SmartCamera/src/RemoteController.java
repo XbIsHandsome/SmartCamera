@@ -4,17 +4,19 @@
 
 public class RemoteController{
 	
-    private String ip;
-    private String userName;
-    private String password;
 	private RemoteExecuteCommand rec;
+	private FtpUtil fu;
 	
-	public jetsonController(){}
-	public jetsonController(String ip, String userName, String password){
-		this.ip = ip;
-		this.userName = userName;
-		this.password = password;
-		rec = new RemoteExecuteCommand(ip, userName, password);
+	public RemoteController(){}
+	
+	public RemoteController(RemoteExecuteCommand rec, FtpUtil fu){
+		this.rec = rec;
+		this.fu = fu;
+	}
+	
+	public RemoteController(String ip, String sshUserName, String sshPassword, String ftpUserName, String ftpPassword){
+		rec = new RemoteExecuteCommand(ip, sshUserName, sshPassword);
+		fu = new FtpUtil(ip, 21, ftpUserName, ftpPassword);
 	}
 	
 	 /** 
@@ -51,18 +53,32 @@ public class RemoteController{
 		ByteArrayInputStream csvStream;
 		for(i = 0; i < n; i++){
 			//ftp上传xml文件
-			FtpUtil.uploadFile(ip, 21, /*ftp用户名*/, /*ftp密码*/, path, "/", labels[i].toString()+".xml", input);
+			fu.uploadFile(path, "/", labels[i].toString()+".xml", input);
 			csv += labels[i].toString()+".xml;"+labels[i].toString()+"\n";
 		}
 		//上传csv文件
 		csvStream = new ByteArrayInputStream(sInputString.getBytes());
-		FtpUtil.uploadFile(ip, 21, /*ftp用户名*/, /*ftp密码*/, path, "/", "at.csv", input);
+		fu.uploadFile(path, "/", "at.csv", input);
 		
 		//执行mergeXML.py
 		String command = "python3 mergeXML.py "+path;
 		String output = rec.execute(command);
 		return output;
 	}
+
+	public void setRec(RemoteExecuteCommand rec){
+		this.rec = rec;
+	}
 	
-	getter & setter;
+	public RemoteExecuteCommand getRec(){
+		return this.rec;
+	}
+	
+	public void setFu(FtpUtil fu){
+		this.fu = fu;
+	}
+	
+	public FtpUtil getFu(){
+		return this.fu;
+	}
 }
