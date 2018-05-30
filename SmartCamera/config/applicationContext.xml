@@ -65,8 +65,6 @@
 	<bean id="stuClassAction" class="com.camera.action.StuClassAction">
 		<property name="stuClassService" ref="stuClassService"/>
 	</bean>	
-	<bean id="synchroAction" class="com.camera.action.SynchroAction">
-	</bean>
 
 										<!-- service配置 -->
 	<bean id="userSevice" class="com.camera.service.UserService">

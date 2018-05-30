@@ -8,7 +8,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html>
 
 <head>
-<title>智慧课堂行为监测系统</title>
 <meta charset="utf-8" />
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/css/amazeui.min.css">
@@ -27,7 +26,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <body>
 	<header class="am-topbar am-topbar-inverse admin-header">
 	<div class="am-topbar-brand">
-		<strong>智慧课堂</strong> <small>行为管理系统系统</small>
+		<strong>智慧课堂</strong> <small>管理系统</small>
 		<span><small style="font-size:8px">上次登录：20<s:property value="#session.exitUser.last_login"/></small></span>
 	</div>
 	<button
@@ -39,6 +38,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 		<ul
 			class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list">
+			<li><a href="javascript:;"><span class="am-icon-envelope-o"></span>
+					收件箱 <span class="am-badge am-badge-warning">5</span> </a></li>
 			<li class="am-dropdown" data-am-dropdown=""><a
 				class="am-dropdown-toggle" data-am-dropdown-toggle=""
 				href="javascript:;"> <span class="am-icon-users"></span>
@@ -83,7 +84,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 							</ul> -->
 						</li>
-					<li class="admin-parent"><a href="${pageContext.request.contextPath}/synchro_showAllClass.action" class="am-cf" target="right"><span
+					<li class="admin-parent"><a class="am-cf"><span
 							class="am-icon-file"></span> 实时监控<span
 							class="am-icon-angle-right am-fr am-margin-right"></span> </a>
 						<!--<ul class="am-list am-collapse admin-sidebar-sub am-in"
@@ -152,12 +153,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<!-- content start -->
 		<div class="admin-content">
 			<div class="admin-content-body">
-				<iframe src="${pageContext.request.contextPath}/synchro_showAllClass.action" width="100%" height="1100" name="right"
+				<iframe src="depart.html" width="100%" height="1100" name="right"
 					style="border: none;"></iframe>
 			</div>
 		</div>
 
-		<footer class="admin-content-footer" >
+		<footer class="admin-content-footer">
 		<hr>
 		<p class="am-padding-left">© 2014 AllMobilize, Inc. Licensed under
 			MIT license.</p>

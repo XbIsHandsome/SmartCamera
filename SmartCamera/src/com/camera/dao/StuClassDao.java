@@ -8,7 +8,6 @@ import com.camera.action.StuClassAction;
 
 public class StuClassDao extends HibernateDaoSupport{
 
-	@SuppressWarnings("unchecked")
 	public List<StuClassAction> getAll() {
 		String hql = "from StuClass";
 		List<StuClassAction> list = this.getHibernateTemplate().find(hql);

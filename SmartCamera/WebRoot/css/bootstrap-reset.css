@@ -243,9 +243,6 @@ padding: 0.4em .8em;
 .text-purple {
     color: #ad86df;
 }
-.text-top-blue {
-    color: #1390D0;
-}
 /* text-color */
 .text-dark {
       color: #797979;
@@ -456,9 +453,7 @@ textarea.form-control {
     background-color: #F3F5F6;
 }
 
-.bg-top-blue{
-    background-color: rgba(13, 90, 208, 0.8);
-}
+
 .bg-primary{
     background-color: rgba(63, 81, 181, 0.8);
 }

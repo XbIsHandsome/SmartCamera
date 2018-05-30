@@ -1,13 +1,7 @@
 package com.camera.bean;
 
-import java.io.Serializable;
+public class StuClass {
 
-public class StuClass implements Serializable{
-
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 5245372213186560163L;
 	private Integer cid;
 	private String department;
 	private String major;

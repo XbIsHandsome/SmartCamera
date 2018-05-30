@@ -37,7 +37,7 @@ function checkForm() {
 				<a href="#"><img src="images/login_logo.png" /></a>
 			</div>
 			<div class="login_name">
-				<p>智慧课堂行为监测系统</p>
+				<p>智慧课堂管理系统</p>
 			</div>
 			<form method="post"
 				action="${pageContext.request.contextPath}/user_login.action">
