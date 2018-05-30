@@ -5,44 +5,26 @@
 <html>
 
 <head>
-<meta charset="UTF-8">
-	<title></title>
-	<link href="${pageContext.request.contextPath}/css/bootstrap.min.css"
-		rel="stylesheet">
-		<link
-			href="${pageContext.request.contextPath}/css/bootstrap-reset.css"
-			rel="stylesheet">
-
-			<!--Animation css-->
-			<link href="${pageContext.request.contextPath}/css/animate.css"
-				rel="stylesheet">
-
-				<!--Icon-fonts css-->
-				<link
-					href="${pageContext.request.contextPath}/assets/font-awesome/css/font-awesome.css"
-					rel="stylesheet" />
-				<link
-					href="${pageContext.request.contextPath}/assets/ionicon/css/ionicons.min.css"
-					rel="stylesheet" />
-
-				<!-- Plugin Css-->
-				<link rel="stylesheet"
-					href="${pageContext.request.contextPath}/assets/css/magnific-popup/magnific-popup.css" />
-				<link rel="stylesheet"
-					href="${pageContext.request.contextPath}/assets/jquery-datatables-editable/datatables.css" />
-
-				<!-- Custom styles for this template -->
-				<link href="css/style.css" rel="stylesheet">
-					<link
-						href="${pageContext.request.contextPath}/css/assets/css/helper.css"
-						rel="stylesheet">
+<meta charset="UTF-8" />
+	<title>历史查看</title>
+	<link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="${pageContext.request.contextPath}/css/bootstrap-reset.css" rel="stylesheet" />
+ 	<!--Animation css-->
+	<link href="${pageContext.request.contextPath}/css/animate.css" rel="stylesheet" />
+ 	<!--Icon-fonts css-->
+	<link href="${pageContext.request.contextPath}/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+	<link href="${pageContext.request.contextPath}/assets/ionicon/css/ionicons.min.css" rel="stylesheet" />
+ 	<!-- Plugin Css-->
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/magnific-popup/magnific-popup.css" />
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/jquery-datatables-editable/datatables.css" />
+ 	<!-- Custom styles for this template -->
+	<link href="${pageContext.request.contextPath}/css/table-style.css" rel="stylesheet" />
+	<link href="${pageContext.request.contextPath}/css/helper.css" rel="stylesheet" />
 </head>
 
 <body>
-	<div class="wraper container-fluid">
-		<div class="page-title">
-			<h3 class="title">Editable Table</h3>
-		</div>
+<div >&nbsp;</div>
+	<div style="margin-top: 40px" class="wraper container-fluid">
 
 
 		<div class="panel">
