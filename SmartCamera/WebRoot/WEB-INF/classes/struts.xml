@@ -22,7 +22,7 @@
 		</action>
 		
 		<action name="stuClass_*" class="stuClassAction" method="{1}">
-			<result name="success">/WEB-INF/jsp/depart.jsp</result>
+			<result name="success">/WEB-INF/jsp/history.jsp</result>
 		</action>
 		
 		<action name="synchro_*" class="synchroAction" method="{1}">
@@ -30,5 +30,10 @@
 			<result name="showDetail">/WEB-INF/jsp/class_detail.jsp</result>
 		</action>
 		
+		<action name="course_*" class="courseAction" method="{1}">
+			<result name="success">/WEB-INF/jsp/synchroAll.jsp</result>
+			<result name="showSelect">/WEB-INF/jsp/class_select.jsp</result>
+			<result name="showDetail">/WEB-INF/jsp/course_detail.jsp</result>
+		</action>
 	</package>
 </struts>

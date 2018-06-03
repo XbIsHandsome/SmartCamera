@@ -1,6 +1,7 @@
 package com.camera.bean;
 
 import java.io.Serializable;
+import java.util.Set;
 
 public class StuClass implements Serializable{
 
@@ -15,6 +16,7 @@ public class StuClass implements Serializable{
 	private String number;
 	private String last_week_nattend;
 	private String class_name;
+	private Set<Class_Course> class_Course;
 	public String getClass_name() {
 		return class_name;
 	}
@@ -57,12 +59,11 @@ public class StuClass implements Serializable{
 	public void setLast_week_nattend(String last_week_nattend) {
 		this.last_week_nattend = last_week_nattend;
 	}
-	@Override
-	public String toString() {
-		return "StuClass [cid=" + cid + ", department=" + department
-				+ ", major=" + major + ", grade=" + grade + ", number="
-				+ number + ", last_week_nattend=" + last_week_nattend + "]";
+	public Set<Class_Course> getClass_Course() {
+		return class_Course;
 	}
-	
+	public void setClass_Course(Set<Class_Course> class_Course) {
+		this.class_Course = class_Course;
+	}
 	
 }

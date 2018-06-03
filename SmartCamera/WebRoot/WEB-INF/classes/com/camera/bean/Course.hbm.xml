@@ -8,11 +8,12 @@
 			<generator class="native"/>
  		</id>
  		<property name="coursename"/>
- 		<property name="teacher"/>
- 		<property name="semester"/>
- 		<property name="week_time"/>
- 		<property name="time"/>
  		<property name="warning"/>
+ 		
+ 		<set name="class_Course" cascade="save-update" lazy="false">
+ 			<key column="csid"></key>
+			<one-to-many class="com.camera.bean.Class_Course" />
+ 		</set>
  	</class>
  
  </hibernate-mapping>

@@ -34,7 +34,7 @@ public class RemoteController{
 	public List<Integer> runRF(Course course){
 		List<Integer> result = new ArrayList<Integer>();
 		String command = "python3 rf.py ";
-		command += course.getTime();
+		//command += course.getTime();
 		
 		//这里会执行一节课的时间
 		String output = rec.executeSuccess(command);
