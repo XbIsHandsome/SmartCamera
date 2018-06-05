@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import com.camera.action.StuClassAction;
+import com.camera.bean.StuClass;
 
 public class StuClassDao extends HibernateDaoSupport{
 
@@ -16,6 +17,11 @@ public class StuClassDao extends HibernateDaoSupport{
 			return list;
 		}
 		return null;
+	}
+
+	public StuClass findClassByCid(Integer id) {
+		String hql = "from StuClass where cid=?";
+		return (StuClass) this.getHibernateTemplate().find(hql, id).get(0);
 	}
 
 	

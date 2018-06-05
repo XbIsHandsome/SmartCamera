@@ -94,7 +94,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							</a></li>
 
 						</ul>--></li>
-						<li class="admin-parent"><a class="am-cf"><span
+						<li class="admin-parent"><a href="${pageContext.request.contextPath}/course_select.action" class="am-cf" target="right"><span
 							class="am-icon-file"></span> 课程管理<span
 							class="am-icon-angle-right am-fr am-margin-right"></span> </a>
 						<!--<ul class="am-list am-collapse admin-sidebar-sub am-in"

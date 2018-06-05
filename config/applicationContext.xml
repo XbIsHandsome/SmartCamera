@@ -45,6 +45,8 @@
 				<value>com/camera/bean/StuClass.hbm.xml</value>
 				<value>com/camera/bean/Course.hbm.xml</value>
 				<value>com/camera/bean/Student.hbm.xml</value>
+				<value>com/camera/bean/Model.hbm.xml</value>
+				<value>com/camera/bean/Class_Course.hbm.xml</value>
 			</list>
 		</property>
 	</bean>
@@ -67,6 +69,11 @@
 	</bean>	
 	<bean id="synchroAction" class="com.camera.action.SynchroAction">
 	</bean>
+<<<<<<< HEAD:config/applicationContext.xml
+=======
+	<bean id="courseAction" class="com.camera.action.CourseAction">
+	</bean>
+>>>>>>> 7a495f5570be5d21e614b24cee81febda235639e:SmartCamera/config/applicationContext.xml
 
 										<!-- service配置 -->
 	<bean id="userSevice" class="com.camera.service.UserService">
@@ -80,6 +87,9 @@
 		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
 	<bean id="stuClassDao" class="com.camera.dao.StuClassDao">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="modelDao" class="com.camera.dao.ModelDao">
 		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
 </beans>

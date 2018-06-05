@@ -8,7 +8,7 @@
 			<generator class="native"/>
  		</id>
  		<property name="studentname"/>
- 		<many-to-one name="stuClass" class="com.camera.bean.Student" column="cid"/>
+ 		<many-to-one name="stuClass" class="com.camera.bean.StuClass" column="cid"/>
  	</class>
  
  

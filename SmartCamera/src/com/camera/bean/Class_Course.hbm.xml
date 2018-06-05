@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+ <hibernate-mapping>
+ 	<class name="com.camera.bean.Class_Course" table="class_course">
+ 		<id name="ccid" column="ccid">
+			<generator class="native"/>
+ 		</id>
+ 		<property name="semester"/>
+ 		<property name="week_time"/>
+ 		<property name="time"/>
+ 		<property name="place"/>
+ 		<property name="teacher"/>
+ 		
+ 		<many-to-one name="cid" class="com.camera.bean.StuClass" column="cid" fetch="join"></many-to-one>
+ 		<many-to-one name="csid" class="com.camera.bean.Course" column="csid" fetch="join"></many-to-one>
+ 	</class>
+ 
+ </hibernate-mapping>
