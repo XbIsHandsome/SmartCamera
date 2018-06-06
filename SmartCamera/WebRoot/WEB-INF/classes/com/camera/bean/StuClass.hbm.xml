@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+ <hibernate-mapping>
+ 	<class name="com.camera.bean.StuClass" table="stuclass">
+ 		<id name="cid" column="cid" >
+			<generator class="native"/>
+ 		</id>
+ 		<property name="department"/>
+ 		<property name="major"/>
+ 		<property name="grade"/>
+ 		<property name="number"/>
+ 		<property name="last_week_nattend"/>
+ 		<property name="class_name"/>
+ 		<set name="class_Course" cascade="save-update" lazy="false">
+ 			<key column="cid"></key>
+			<one-to-many class="com.camera.bean.Class_Course"/>
+ 		</set>
+ 		<set name="nattends" cascade="save-update" lazy="false">
+ 			<key column="cid"/>
+ 			<one-to-many class="com.camera.bean.Nattend"/>
+ 		</set>
+ 		<set name="students" cascade="save-update" lazy="false">
+ 			<key column="cid"/>
+ 			<one-to-many class="com.camera.bean.Student"/>
+ 		</set>
+ 	</class>
+ 
+ </hibernate-mapping>
